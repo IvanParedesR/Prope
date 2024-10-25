@@ -1,4 +1,4 @@
-name: Run R script monthly1
+name: Run R script monthly
 
 on:
   schedule:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("tidyverse", "httr", "jsonlite", "rjson", "ggplot2"))'  # Ajusta las librerías que necesite tu script
+          Rscript -e 'install.packages(c("tidyverse", "jsonlite", "rjson", "ggplot2"))'  # Ajusta las librerías que necesite tu script
 
       - name: Run poblacion.R script
         run: |
