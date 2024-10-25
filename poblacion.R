@@ -1,10 +1,10 @@
-library(httr)
 library(jsonlite)
 library(rjson)
 
-#Llamado al API
-url <-"https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/1002000001/es/00000/false/BISE/2.0/af2d1a87-37aa-4c76-0d9e-56471598b0f7?type=json"
-respuesta<-GET(url)
+url <- "https://www.inegi.org.mx/app/api/indicadores/desarrolladores/jsonxml/INDICATOR/1002000001/es/00000/false/BISE/2.0/af2d1a87-37aa-4c76-0d9e-56471598b0f7?type=json"
+# Llamada al API y carga del JSON
+respuesta <- fromJSON(url)
+
 datosGenerales<-content(respuesta,"text")
 flujoDatos<-paste(datosGenerales,collapse = " ")
 
