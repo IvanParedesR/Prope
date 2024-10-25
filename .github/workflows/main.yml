@@ -1,8 +1,8 @@
-name: Run R script monthly
+name: Run R script monthly1
 
 on:
   schedule:
-    - cron: '16 23 25 * *'  # Ejecuta día 26 de cada mes a las 00:00 UTC
+    - cron: '25 23 25 * *'  # Ejecuta día 26 de cada mes a las 00:00 UTC
 
 jobs:
   run-r-script:
