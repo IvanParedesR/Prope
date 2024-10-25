@@ -2,14 +2,14 @@ name: Run R script monthly1
 
 on:
   schedule:
-    - cron: '33 20 25 * *'  # Ejecuta día 26 de cada mes a las 00:00 UTC
+    - cron: '39 20 25 * *'  # Ejecuta día 26 de cada mes a las 00:00 UTC
 
 jobs:
   run-r-script:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out repository
+      - name: Prope
         uses: actions/checkout@v3
 
       - name: Set up R
