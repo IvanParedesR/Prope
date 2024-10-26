@@ -1,8 +1,8 @@
-name: Run R script monthly_2
+name: Run R script monthly
 
 on:
   schedule:
-    - cron: '25 2 26 * *'  # Ejecuta día 26 de cada mes a las 00:00 UTC
+    - cron: '5 4 26 * *'  # Ejecuta día 26 de cada mes a las 00:00 UTC
 
 jobs:
   run-r-script:
@@ -19,7 +19,7 @@ jobs:
 
       - name: Install R packages
         run: |
-          Rscript -e 'install.packages(c("tidyverse", "jsonlite", "rjson", "ggplot2"))'  # Ajusta las librerías que necesite tu script
+          Rscript -e 'install.packages(c("tidyverse", "jsonlite", "dplyr", "ggplot2", "rjson"))'  # Ajusta las librerías que necesite tu script
 
       - name: Run poblacion.R script
         run: |
