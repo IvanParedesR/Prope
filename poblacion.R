@@ -47,9 +47,11 @@ poblacion$TIME_PERIOD <- as.double(poblacion$TIME_PERIOD)
 library(ggplot2)
 
 # Crea la gráfica de líneas
-ggplot(poblacion, aes(x = TIME_PERIOD, y = OBS_VALUE)) +
+p<- ggplot(poblacion, aes(x = TIME_PERIOD, y = OBS_VALUE)) +
   geom_line() +
   labs(title = "Gráfica de oblación",
        x = "Fecha",
        y = "Población") +
   theme_minimal()
+
+ggsave("p.png", plot = p)
