@@ -1,4 +1,4 @@
-name: Run R script monthly
+name: Run R script monthly_2
 
 on:
   schedule:
