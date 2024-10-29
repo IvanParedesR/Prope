@@ -1,8 +1,8 @@
-name: Run R script monthly3
+name: Run R script monthly4
 
 on:
   schedule:
-    - cron: '44 23 28 * *'  # Ejecuta día 28 de cada mes a las 00:00 UTC
+    - cron: '15 1 29 * *'  # Ejecuta día 28 de cada mes a las 00:00 UTC
 
 jobs:
   run-r-script:
@@ -24,3 +24,12 @@ jobs:
       - name: Run poblacion.R script
         run: |
           Rscript poblacion.R
+      - name: Commit and push plot
+        run: |
+          git config --global user.name "IvanParedesR"
+          git config --global user.email "ivanresendiz25@gmail.com"
+          git add p.png
+          git commit -m "Add generated plot"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
